@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TrewMonitor Beta - Thanks for helping me test this grid bot monitoring tool! Your feedback means everything.">
+    <title>TrewMonitor Beta | Thanks for Testing!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dark-bg': '#1a1a1a',
+                        'dark-card': '#242424',
+                        'dark-border': '#333333',
+                        'teal-glow': '#00D9FF',
+                        'teal-dark': '#00A3BF'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark-bg text-white font-inter min-h-screen">
+    <!-- Header/Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-dark-bg/90 backdrop-blur-md border-b border-dark-border">
+        <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2">
+                <span class="text-2xl font-bold">Trew<span class="text-teal-glow">Monitor</span></span>
+                <span class="text-xs bg-teal-glow/20 text-teal-glow px-2 py-0.5 rounded-full">Beta</span>
+            </a>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#features" class="text-gray-400 hover:text-teal-glow transition-colors">Features</a>
+                <a href="#vision" class="text-gray-400 hover:text-teal-glow transition-colors">The Vision</a>
+                <a href="https://app.trewmonitor.tech" class="bg-teal-glow text-dark-bg font-semibold px-5 py-2 rounded-lg hover:bg-teal-dark hover:text-white transition-all glow-button">
+                    Try the Beta
+                </a>
+            </div>
+            <button class="md:hidden text-teal-glow" id="mobile-menu-btn">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-card border-t border-dark-border">
+            <div class="px-6 py-4 flex flex-col gap-4">
+                <a href="#features" class="text-gray-400 hover:text-teal-glow transition-colors">Features</a>
+                <a href="#vision" class="text-gray-400 hover:text-teal-glow transition-colors">The Vision</a>
+                <a href="https://app.trewmonitor.tech" class="bg-teal-glow text-dark-bg font-semibold px-5 py-3 rounded-lg text-center hover:bg-teal-dark hover:text-white transition-all">
+                    Try the Beta
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                Hey! Welcome to <span class="text-teal-glow">TrewMonitor Beta</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10">
+                Thanks for being one of the first to try this out! I built this to make tracking grid bot performance way easier. It's still early days, so I'd love your honest feedback.
+            </p>
+            <a href="https://app.trewmonitor.tech" class="inline-block bg-teal-glow text-dark-bg font-bold px-8 py-4 rounded-lg text-lg hover:bg-teal-dark hover:text-white transition-all glow-button">
+                Check It Out
+            </a>
+        </div>
+    </section>
+
+    <!-- Interactive Carousel Section -->
+    <section class="py-16 px-6 overflow-hidden">
+        <div class="max-w-6xl mx-auto">
+            <div class="carousel-container relative">
+                <div class="carousel-track flex transition-transform duration-500 ease-out" id="carousel-track">
+                    <!-- Slide 1: Overview -->
+                    <div class="carousel-slide flex-shrink-0 w-full flex justify-center items-center">
+                        <div class="phone-wrapper">
+                            <div class="phone-glow"></div>
+                            <div class="phone-frame">
+                                <img src="https://cdn.abacus.ai/images/243340fc-e375-4639-9d6b-c5b909faae30.png" alt="TrewMonitor Overview" class="phone-screen">
+                            </div>
+                            <p class="text-center mt-6 text-lg font-medium text-gray-300">Dashboard Overview</p>
+                        </div>
+                    </div>
+                    <!-- Slide 2: Multi-Bot -->
+                    <div class="carousel-slide flex-shrink-0 w-full flex justify-center items-center">
+                        <div class="phone-wrapper">
+                            <div class="phone-glow"></div>
+                            <div class="phone-frame">
+                                <img src="https://cdn.abacus.ai/images/01205bec-6def-4937-b636-49da976b6307.png" alt="Multi-Bot Management" class="phone-screen">
+                            </div>
+                            <p class="text-center mt-6 text-lg font-medium text-gray-300">Multi-Bot Management</p>
+                        </div>
+                    </div>
+                    <!-- Slide 3: Range Tracking -->
+                    <div class="carousel-slide flex-shrink-0 w-full flex justify-center items-center">
+                        <div class="phone-wrapper">
+                            <div class="phone-glow"></div>
+                            <div class="phone-frame">
+                                <img src="https://cdn.abacus.ai/images/6966fd5f-b903-42c6-8ad3-d028b09ab078.png" alt="Range Tracking" class="phone-screen">
+                            </div>
+                            <p class="text-center mt-6 text-lg font-medium text-gray-300">Real-Time Range Tracking</p>
+                        </div>
+                    </div>
+                    <!-- Slide 4: Analytics -->
+                    <div class="carousel-slide flex-shrink-0 w-full flex justify-center items-center">
+                        <div class="phone-wrapper">
+                            <div class="phone-glow"></div>
+                            <div class="phone-frame">
+                                <img src="https://cdn.abacus.ai/images/cd6e984d-cb65-4060-99b0-3f9e823d72ff.png" alt="Analytics Dashboard" class="phone-screen">
+                            </div>
+                            <p class="text-center mt-6 text-lg font-medium text-gray-300">Advanced Analytics</p>
+                        </div>
+                    </div>
+                    <!-- Slide 5: AI Insights -->
+                    <div class="carousel-slide flex-shrink-0 w-full flex justify-center items-center">
+                        <div class="phone-wrapper">
+                            <div class="phone-glow"></div>
+                            <div class="phone-frame">
+                                <img src="https://cdn.abacus.ai/images/b2778107-3da8-41b6-a293-f64bd5ad2c4c.png" alt="AI Insights" class="phone-screen">
+                            </div>
+                            <p class="text-center mt-6 text-lg font-medium text-gray-300">AI-Powered Insights</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Arrows -->
+                <button class="carousel-arrow carousel-arrow-left" id="carousel-prev" aria-label="Previous slide">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                    </svg>
+                </button>
+                <button class="carousel-arrow carousel-arrow-right" id="carousel-next" aria-label="Next slide">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </button>
+
+                <!-- Navigation Dots -->
+                <div class="flex justify-center gap-3 mt-8" id="carousel-dots">
+                    <button class="carousel-dot active" data-index="0" aria-label="Go to slide 1"></button>
+                    <button class="carousel-dot" data-index="1" aria-label="Go to slide 2"></button>
+                    <button class="carousel-dot" data-index="2" aria-label="Go to slide 3"></button>
+                    <button class="carousel-dot" data-index="3" aria-label="Go to slide 4"></button>
+                    <button class="carousel-dot" data-index="4" aria-label="Go to slide 5"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Grid -->
+    <section id="features" class="py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">What You Can Do</h2>
+            <p class="text-gray-400 text-center mb-12 max-w-2xl mx-auto">Here's what I've built so far — let me know what's working and what needs improvement!</p>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card bg-dark-card p-8 rounded-xl border border-dark-border hover:border-teal-glow/50 transition-all">
+                    <div class="w-14 h-14 bg-teal-glow/10 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-teal-glow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Real-Time Range Tracking</h3>
+                    <p class="text-gray-400">You'll see live updates on where your bot is operating and how price is moving. Super helpful for knowing when to adjust.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card bg-dark-card p-8 rounded-xl border border-dark-border hover:border-teal-glow/50 transition-all">
+                    <div class="w-14 h-14 bg-teal-glow/10 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-teal-glow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Aggregated Profit Metrics</h3>
+                    <p class="text-gray-400">I wanted one place to see all my earnings, so I built this dashboard that pulls everything together. Hope you find it useful too!</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card bg-dark-card p-8 rounded-xl border border-dark-border hover:border-teal-glow/50 transition-all">
+                    <div class="w-14 h-14 bg-teal-glow/10 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-teal-glow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Multi-Bot Overview</h3>
+                    <p class="text-gray-400">If you're running multiple bots like me, you can compare them all side by side. Makes it easy to see what's working best.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Section (formerly Comparison) -->
+    <section id="vision" class="py-20 px-6 bg-dark-card/50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">What I'm Building</h2>
+            <p class="text-gray-400 text-center mb-12 max-w-2xl mx-auto">The goal is simple: make grid bot monitoring less of a headache</p>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Benefits List -->
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 bg-teal-glow/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <svg class="w-5 h-5 text-teal-glow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg mb-1">Keep It Simple</h4>
+                            <p class="text-gray-400">No clutter, no confusion. Just the stuff you actually need to see.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 bg-teal-glow/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <svg class="w-5 h-5 text-teal-glow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg mb-1">Actually Useful Insights</h4>
+                            <p class="text-gray-400">Working on making the data meaningful so you can make better decisions.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 bg-teal-glow/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <svg class="w-5 h-5 text-teal-glow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg mb-1">Security First</h4>
+                            <p class="text-gray-400">Read-only API access only — your funds stay safe. I take this seriously.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 bg-teal-glow/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <svg class="w-5 h-5 text-teal-glow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg mb-1">Reliable Uptime</h4>
+                            <p class="text-gray-400">Aiming for 24/7 availability so it's there when you need it.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comparison Visual -->
+                <div class="comparison-visual">
+                    <div class="grid grid-cols-2 gap-4">
+                        <!-- TrewMonitor -->
+                        <div class="bg-dark-card rounded-xl p-4 border border-teal-glow/30">
+                            <div class="text-center mb-3">
+                                <span class="text-sm font-medium text-teal-glow">TrewMonitor</span>
+                            </div>
+                            <div class="bg-dark-bg rounded-lg p-3 space-y-2">
+                                <div class="h-3 bg-teal-glow/30 rounded w-3/4"></div>
+                                <div class="h-8 bg-teal-glow/20 rounded flex items-center justify-center">
+                                    <span class="text-teal-glow text-xs font-bold">+$5,432</span>
+                                </div>
+                                <div class="h-3 bg-gray-700 rounded w-1/2"></div>
+                                <div class="h-12 bg-gradient-to-r from-teal-glow/20 to-teal-glow/5 rounded"></div>
+                                <div class="h-3 bg-gray-700 rounded w-2/3"></div>
+                            </div>
+                            <p class="text-center text-xs text-gray-400 mt-3">Clean & Focused</p>
+                        </div>
+                        <!-- Typical Exchange -->
+                        <div class="bg-dark-card rounded-xl p-4 border border-dark-border opacity-60">
+                            <div class="text-center mb-3">
+                                <span class="text-sm font-medium text-gray-400">Typical Exchange</span>
+                            </div>
+                            <div class="bg-dark-bg rounded-lg p-3 space-y-1">
+                                <div class="flex gap-1">
+                                    <div class="h-2 bg-red-500/30 rounded w-1/4"></div>
+                                    <div class="h-2 bg-green-500/30 rounded w-1/4"></div>
+                                    <div class="h-2 bg-yellow-500/30 rounded w-1/4"></div>
+                                    <div class="h-2 bg-blue-500/30 rounded w-1/4"></div>
+                                </div>
+                                <div class="h-4 bg-gray-600 rounded"></div>
+                                <div class="flex gap-1">
+                                    <div class="h-2 bg-gray-600 rounded w-1/3"></div>
+                                    <div class="h-2 bg-gray-600 rounded w-1/3"></div>
+                                    <div class="h-2 bg-gray-600 rounded w-1/3"></div>
+                                </div>
+                                <div class="h-6 bg-gray-700 rounded"></div>
+                                <div class="flex gap-1">
+                                    <div class="h-2 bg-gray-600 rounded w-1/2"></div>
+                                    <div class="h-2 bg-gray-600 rounded w-1/2"></div>
+                                </div>
+                                <div class="h-3 bg-gray-600 rounded"></div>
+                                <div class="flex gap-1">
+                                    <div class="h-2 bg-gray-700 rounded w-1/4"></div>
+                                    <div class="h-2 bg-gray-700 rounded w-1/4"></div>
+                                    <div class="h-2 bg-gray-700 rounded w-1/4"></div>
+                                    <div class="h-2 bg-gray-700 rounded w-1/4"></div>
+                                </div>
+                            </div>
+                            <p class="text-center text-xs text-gray-500 mt-3">Info Overload</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Thanks Section (formerly CTA) -->
+    <section class="py-20 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Thanks for Being an Early Tester! 🙏</h2>
+            <p class="text-gray-400 text-lg mb-8">Your feedback is genuinely helping shape this project. Don't hold back — tell me what works, what doesn't, and what you wish it could do.</p>
+            <a href="https://app.trewmonitor.tech" class="inline-block bg-teal-glow text-dark-bg font-bold px-10 py-4 rounded-xl text-lg hover:bg-teal-dark hover:text-white transition-all glow-button-large">
+                Start Testing
+            </a>
+        </div>
+    </section>
+
+    <!-- Coming Soon Banner -->
+    <section class="py-8 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="coming-soon-banner bg-dark-card border border-teal-glow/30 rounded-xl p-6 text-center">
+                <div class="flex flex-col items-center gap-2">
+                    <div class="flex items-center gap-3">
+                        <svg class="w-6 h-6 text-teal-glow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                        <span class="text-lg font-medium">Coming Soon: <span class="text-teal-glow">Smart Alerts & Automated Insights</span></span>
+                    </div>
+                    <p class="text-sm text-gray-400">Your feedback will help shape these features!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-6 border-t border-dark-border">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+                <span class="text-xl font-bold">Trew<span class="text-teal-glow">Monitor</span></span>
+                <span class="text-xs bg-teal-glow/20 text-teal-glow px-2 py-0.5 rounded-full">Beta</span>
+            </div>
+            <p class="text-gray-500 text-sm">Built with ☕ — Thanks for testing!</p>
+            <div class="flex items-center gap-6">
+                <a href="#" class="text-gray-400 hover:text-teal-glow transition-colors text-sm">Privacy</a>
+                <a href="#" class="text-gray-400 hover:text-teal-glow transition-colors text-sm">Terms</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/carousel.js"></script>
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn?.addEventListener('click', () => {
+            mobileMenu?.classList.toggle('hidden');
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    mobileMenu?.classList.add('hidden');
+                }
+            });
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .comparison-visual').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
